@@ -15,10 +15,8 @@ def check_solution(func, qnum, tests):
     test_func = getattr(tests, f"test_q{qnum}")
     return test_func(func)
 
-def report_solution(func, qnum, tests):
-    """Print colored pass/fail result for a solution"""
-    result = check_solution(func, qnum, tests)
-    if result:
-        print(f"\033[92mQ{qnum}: ✅ All Test Cases Passed\033[0m")   # Green
+def report_solution(status):
+    if status:
+        print(f"\033[92m: ✅ All Test Cases Passed\033[0m")   # Green
     else:
-        print(f"\033[91mQ{qnum}: ❌ Some Test Cases Failed\033[0m")  # Red
+        print(f"\033[91m: ❌ Some Test Cases Failed\033[0m")  # Red
