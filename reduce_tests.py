@@ -1,3 +1,6 @@
+def test_q1(func):
+    return all(func(x) == x**2 for x in [0, 2, -3, 10])
+    
 def run_tests():
     assert q1(12345) == 15
     assert q1(999) == 27
