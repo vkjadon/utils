@@ -28,3 +28,36 @@ def test_q9(func):
 
 def test_q10(func):
     return func([(1,3),(2,1),(5,2)]) == [(2,1),(5,2),(1,3)]
+    
+def test_q11(func):
+    return func(1200) == 1080 and func(800) == 800
+
+def test_q12(func):
+    return func(15) == True and func(12) == False and func(19) == True
+
+def test_q13(func):
+    plots = [(2,3),(4,5),(1,10)]
+    return func(plots) == (4,5)
+
+def test_q14(func):
+    return func(35) == "Fail" and func(50) == "Pass"
+
+def test_q15(func):
+    return func(3) == 50 and func(10) == 100
+
+def test_q16(func):
+    return func(0) == 32 and func(100) == 212
+
+def test_q17(func):
+    return func(95)=="A" and func(80)=="B" and func(60)=="C" and func(40)=="C" and func(30)=="F"
+
+def test_q18(func):
+    return func(10)==True and func(20)==False and func(9)==True and func(18)==True
+
+def test_q19(func):
+    words = ["madam","racecar","apple","level"]
+    return func(words) == ["madam","racecar","level"]
+
+def test_q20(func):
+    emps = [("A",5000),("B",8000),("C",7000)]
+    return func(emps) == [("B",8000),("C",7000),("A",5000)]
