@@ -1,2 +1,2 @@
 def test_q1(func):
-    return all(func(x) == x**2 for x in [0, 2, -3, 10])
+  return (func("Vijay") == ["v", "j", "y"] and func("Mechanical") == ["m", "c", "a", "i", "a"])
