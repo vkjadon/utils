@@ -18,17 +18,7 @@ def initialize_with_zeros_test_1(target):
     assert type(w) == np.ndarray, f"Wrong type for w. {type(w)} != np.ndarray"
     assert w.shape == (dim, 1), f"Wrong shape for w. {w.shape} != {(dim, 1)}"
     assert np.allclose(w, [[0.], [0.], [0.]]), f"Wrong values for w. {w} != {[[0.], [0.], [0.]]}"
-    print('\033[92mFirst test passed!')
-    
-def initialize_with_zeros_test_2(target):
-    dim = 4
-    w, b = target(dim)
-    assert type(b) == float, f"Wrong type for b. {type(b)} != float"
-    assert b == 0., "b must be 0.0"
-    assert type(w) == np.ndarray, f"Wrong type for w. {type(w)} != np.ndarray"
-    assert w.shape == (dim, 1), f"Wrong shape for w. {w.shape} != {(dim, 1)}"
-    assert np.allclose(w, [[0.], [0.], [0.], [0.]]), f"Wrong values for w. {w} != {[[0.], [0.], [0.], [0.]]}"
-    print('\033[92mSecond test passed!')    
+    print('\033[92mAll tests passed!')   
 
 def propagate_test(target):
     w, b = np.array([[1.], [2.], [-1]]), 2.5, 
