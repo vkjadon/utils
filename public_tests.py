@@ -1,6 +1,17 @@
 import numpy as np
 
          
+def input_data_test(X, y, number_of_images, channels, px, py):
+  nx = px * py * channels
+  m = number_of_images
+  assert X.shape == (nx, m), f"Wrong shape: {X.shape}"
+  assert y.shape == (1, m), f"Wrong shape: {y.shape}"
+  assert X.dtype in [np.float32, np.float64], f"Unexpected dtype: {X.dtype}"
+  assert np.all((X >= 0) & (X <= 1)), "Values not normalized"
+  assert not np.isnan(X).any(), "NaN values in features"
+  assert not np.isinf(X).any(), "Inf values in features"
+  print('\033[92mAll tests passed!')
+         
 def sigmoid_test(target):
     x = np.array([0, 2])
     output = target(x)
