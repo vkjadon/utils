@@ -11,6 +11,24 @@ def input_data_test(X, y, number_of_images, nx):
   assert not np.isinf(X).any(), "Inf values in features"
   print('\033[92mAll tests passed!')
          
+def forward_linear_test(target):
+    x = np.array([0, 2])
+    output = target(x)
+    assert type(output) == np.ndarray, "Wrong type. Expected np.ndarray"
+    assert np.allclose(output, [0.5, 0.88079708]), f"Wrong value. {output} != [0.5, 0.88079708]"
+    output = target(1)
+    assert np.allclose(output, 0.7310585), f"Wrong value. {output} != 0.7310585"
+    print('\033[92mAll tests passed!')
+
+def forward_activation_test(target):
+    x = np.array([0, 2])
+    output = target(x)
+    assert type(output) == np.ndarray, "Wrong type. Expected np.ndarray"
+    assert np.allclose(output, [0.5, 0.88079708]), f"Wrong value. {output} != [0.5, 0.88079708]"
+    output = target(1)
+    assert np.allclose(output, 0.7310585), f"Wrong value. {output} != 0.7310585"
+    print('\033[92mAll tests passed!')
+
 def sigmoid_test(target):
     x = np.array([0, 2])
     output = target(x)
