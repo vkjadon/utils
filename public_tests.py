@@ -15,7 +15,7 @@ def forward_linear_test(target):
     x = np.array([[0, 2], [3, 4]])
     w = np.array([2, 3])     
     b = 1.5     
-    output = forward_linear(x, w, b)
+    output = target(x, w, b)
     print(output)
     assert type(output) == np.ndarray, "Wrong type. Expected np.ndarray"
     assert np.allclose(output, [10.5, 17.5]), f"Wrong value. {output} != [10.5, 17.5]"
