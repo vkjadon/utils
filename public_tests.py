@@ -20,7 +20,7 @@ def sigmoid_test(target):
     assert np.allclose(output, 0.7310585), f"Wrong value. {output} != 0.7310585"
     print('\033[92mAll tests passed!')
         
-def initialize_with_zeros_test_1(target):
+def initialize_with_zeros_test(target):
     dim = 3
     w, b = target(dim)
     assert type(b) == float, f"Wrong type for b. {type(b)} != float"
