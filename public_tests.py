@@ -30,6 +30,16 @@ def forward_activation_test(target):
     assert np.allclose(output, 0.7310585), f"Wrong value. {output} != 0.7310585"
     print('\033[92mAll tests passed!')
 
+def compute_cost_test(target):
+  A_test = np.array([[0.25, 0.85, 0.15]])
+  y_train_test = np.array([[0.0, 1.0, 0.0]])
+  
+  expected_cost = 0.61271993
+  cost = target(A_test, y_train_test)
+  
+  assert np.allclose(cost, expected_cost), f"Wrong values for cost. {cost} != {expected_cost}"
+  print('\033[92mAll tests passed!')
+
 def sigmoid_test(target):
     x = np.array([0, 2])
     output = target(x)
