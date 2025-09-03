@@ -1,8 +1,7 @@
 import numpy as np
 
          
-def input_data_test(X, y, number_of_images, channels, px, py):
-  nx = px * py * channels
+def input_data_test(X, y, number_of_images, nx):
   m = number_of_images
   assert X.shape == (nx, m), f"Wrong shape: {X.shape}"
   assert y.shape == (1, m), f"Wrong shape: {y.shape}"
