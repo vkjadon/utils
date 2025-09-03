@@ -12,12 +12,13 @@ def input_data_test(X, y, number_of_images, nx):
   print('\033[92mAll tests passed!')
          
 def forward_linear_test(target):
-    x = np.array([0, 2])
-    output = target(x)
+    x = np.array([[0, 2], [3, 4]])
+    w = np.array([2, 3])     
+    b = 1.5     
+    output = forward_linear(x, w, b)
+    print(output)
     assert type(output) == np.ndarray, "Wrong type. Expected np.ndarray"
-    assert np.allclose(output, [0.5, 0.88079708]), f"Wrong value. {output} != [0.5, 0.88079708]"
-    output = target(1)
-    assert np.allclose(output, 0.7310585), f"Wrong value. {output} != 0.7310585"
+    assert np.allclose(output, [10.5, 17.5]), f"Wrong value. {output} != [10.5, 17.5]"
     print('\033[92mAll tests passed!')
 
 def forward_activation_test(target):
