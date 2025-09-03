@@ -26,7 +26,6 @@ def forward_linear_test(target):
     w = np.array([2, 3])     
     b = 1.5     
     output = target(x, w, b)
-    print(output)
     assert type(output) == np.ndarray, "Wrong type. Expected np.ndarray"
     assert np.allclose(output, [10.5, 17.5]), f"Wrong value. {output} != [10.5, 17.5]"
     print('\033[92mAll tests passed!')
@@ -50,6 +49,24 @@ def compute_cost_test(target):
   assert np.allclose(cost, expected_cost), f"Wrong values for cost. {cost} != {expected_cost}"
   print('\033[92mAll tests passed!')
 
+def compute_grad_test(target):
+  X = np.array([[1., 2., -1., 0], [3., 4., -3.2, 1], [3., 4., -3.2, -3.5]])
+  A = np.array([[0.99849882, 0.99979657, 0.15446527, 0.99966465]])
+  y = np.array([[1, 1, 0, 0]])
+  
+  expected_dw = np.array([[-0.03909333], [ 0.12501464], [-0.99960809]])
+  expected_db = 0.28810633
+
+  dw, db = target(X, A, y)
+  
+  assert type(dw) == np.ndarray, f"Wrong type for dw. {type(dw)} != np.ndarray"
+  assert dw.shape[0] == X.shape[0], f"Wrong shape for dw."
+    
+  assert np.allclose(dw, expected_dw), f"Wrong values for dw. {dw} != {expected_dw}"
+  assert np.allclose(db, expected_db), f"Wrong values for db. {db} != {expected_db}"
+
+  print('\033[92mAll tests passed!')
+         
 def sigmoid_test(target):
     x = np.array([0, 2])
     output = target(x)
